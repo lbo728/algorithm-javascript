@@ -5,13 +5,51 @@
   </head>
   <body>
     <script>
-      function solution(day, arr) {
-        let answer;
+      function solution(arr) {
+        let answer = [];
+        const odd = arr.filter((item) => item % 2 === 1);
+        let oddSum = 0;
+        let oddMin = Number.MAX_SAFE_INTEGER;
+        for (let i = 0; i < odd.length; i++) {
+          oddSum = oddSum + odd[i];
+          if (odd[i] < oddMin) oddMin = odd[i];
+        }
+
+        answer = [oddSum, oddMin];
+
         return answer;
       }
 
-      arr = [25, 23, 11, 47, 53, 17, 33];
-      console.log(solution(3, arr));
+      arr = [12, 77, 38, 41, 53, 92, 85];
+      console.log(solution(arr));
     </script>
   </body>
 </html>
+
+<!-- 모범답안
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+                let answer=[];
+                let sum=0, min=1000;
+                for(let x of arr){
+                    if(x%2===1){
+                        sum+=x;
+                        if(x<min) min=x;
+                    }
+                }
+                answer.push(sum);
+                answer.push(min);     
+                return answer;
+            }
+            
+            arr=[12, 77, 38, 41, 53, 92, 85];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html> -->
