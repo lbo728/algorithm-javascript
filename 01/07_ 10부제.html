@@ -7,7 +7,16 @@
     <script>
       function solution(day, arr) {
         let answer = 0;
+        const oneNumb = day % 10;
+        console.log("oneNumb?", oneNumb);
+        // 0. 일의 자리수가 뭔지 어떻게 알지?
+        // 0-2. 일의 자릿수와 매칭되는지 어떻게 알지?
+        // 1. arr.filter를 이용해 day와 일의 자리 수가 같은 요소를 담은 새로운 배열 arrCustom 반환
+        // 2. answer에 arrCustom.length 담기
 
+        const arrCustom = arr.filter((item) => item % 10 === oneNumb);
+        console.log("arrCustom?", arrCustom);
+        answer = arrCustom.length;
         return answer;
       }
 
@@ -16,3 +25,24 @@
     </script>
   </body>
 </html>
+
+<!-- <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(day, arr) {
+        let answer = 0;
+        for (let x of arr) {
+          if (x % 10 === day) answer++;
+        }
+        return answer;
+      }
+
+      arr = [25, 23, 11, 47, 53, 17, 33];
+      console.log(solution(3, arr));
+    </script>
+  </body>
+</html> -->
