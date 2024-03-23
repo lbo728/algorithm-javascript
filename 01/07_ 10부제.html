@@ -14,6 +14,8 @@
         // 1. arr.filter를 이용해 day와 일의 자리 수가 같은 요소를 담은 새로운 배열 arrCustom 반환
         // 2. answer에 arrCustom.length 담기
 
+        console.log("arr 스프레드", ...arr);
+
         const arrCustom = arr.filter((item) => item % 10 === oneNumb);
         console.log("arrCustom?", arrCustom);
         answer = arrCustom.length;
