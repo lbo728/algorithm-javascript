@@ -5,14 +5,13 @@
   </head>
   <body>
     <script>
-      function solution(s) {
-        let answer = "";
-
+      function solution(str) {
+        let answer = str.replaceAll("A", "#");
         return answer;
       }
 
       let str = "BANANA";
-      console.log(solution(str));
+      console.log("정답이요", solution(str));
     </script>
   </body>
 </html>
