@@ -5,13 +5,58 @@
   </head>
   <body>
     <script>
+      // 1. 내가 찾아본 방법
+      // function solution(s) {
+      //   let answer = 0;
+
+      //   answer = s.match(/[A-Z]/g).length;
+      //   return answer;
+      // }
+
+      // 2. 강의보다 혼자 생각해본 것
+      // function solution(s) {
+      //   let answer = 0;
+      //   let sArr = [];
+
+      //   for (let x of s) {
+      //     if (x === x.toUpperCase()) {
+      //       sArr.push(x);
+      //     }
+      //   }
+
+      //   answer = sArr.length;
+      //   return answer;
+      // }
+
+      // 3. 강의 모범 답안 - 1
+      // function solution(s) {
+      //   let answer = 0;
+
+      //   for (let x of s) {
+      //     if (x === x.toUpperCase()) {
+      //       answer++;
+      //     }
+      //   }
+
+      //   return answer;
+      // }
+
+      // 4. 강의 모범 답안 - 2
       function solution(s) {
         let answer = 0;
+
+        for (let x of s) {
+          // ASKII 코드 (외워두기!)
+          // 대문자 : 65 ~ 90 (A ~ Z) -> 26개
+          // 소문자: 97 ~ 122(a ~ z) -> 26개
+          let num = x.charCodeAt();
+          if (num >= 65 && num <= 90) answer++;
+        }
 
         return answer;
       }
 
-      let str = "KoreaTimeGood";
+      let str = 'KoreaTimeGood';
       console.log(solution(str));
     </script>
   </body>
